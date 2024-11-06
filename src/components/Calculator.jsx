@@ -13,16 +13,20 @@ const Calculator = () => {
  }
     return (
         <>
-        <div className="buttons">
-            {numbersArray.map(number => 
-                <button key={number}
-                onClick={()=> handleClick(number)}>{number}</button>
-            )}
-            <p>Número selecionado: {currentNumber}</p>
+        <div className="calculator-wrapper">
+            <div className="calculator-container">
+                <div className="buttons">
+                    {numbersArray.map(number => 
+                        <button key={number}
+                        onClick={()=> handleClick(number)}>{number}</button>
+                    )}
+                    <p>Número selecionado: {currentNumber}</p>
+                </div>
+                <button onClick={()=> resetNumbers()}>Reset</button>
+                <p></p>
+                <Link to='/result'onClick={sumNumbers}>Resultado</Link>
+            </div>
         </div>
-        <button onClick={()=> resetNumbers()}>Reset</button>
-        <p></p>
-        <Link to='/result'>Resultado</Link>
         </>
 
     )
